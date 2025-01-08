@@ -1,10 +1,12 @@
 import React from 'react';
 
 const TaskItem = ({ index, task, removeTask, toggleTaskStatus }) => {
+    const statusClass = task.status === 'pending' ? 'bg-gray-200 text-gray-800' : 'bg-green-100 text-green-700 underline font-bold';
+
     return (
-        <li className={`p-4 flex items-center rounded ${task.status === 'pending' ? 'bg-gray-200' : 'bg-green-100'}`}>
+        <li className={`p-4 flex items-center rounded ${statusClass}`}>
             <div className="flex-1 flex justify-between items-center overflow-hidden">
-                <span className={`flex-1 ${task.status === 'pending' ? 'text-gray-800' : 'text-green-700 underline font-bold'} text-ellipsis whitespace-nowrap`}>
+                <span className="flex-1 text-ellipsis whitespace-nowrap">
                     {task.title}
                 </span>
                 <span>{task.date}</span>
@@ -26,3 +28,4 @@ const TaskItem = ({ index, task, removeTask, toggleTaskStatus }) => {
 };
 
 export default TaskItem;
+

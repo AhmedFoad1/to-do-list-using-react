@@ -1,13 +1,13 @@
 import  { useRef } from 'react';
 
-const TaskInput = ( props) => {
+const TaskInput = ({ addTask }) => {
     const taskTitleRef = useRef();
     const taskDateRef = useRef();
 
     const handleAddTask = () => {
         const title = taskTitleRef.current.value;
         const date = taskDateRef.current.value;
-        props.addTask(title, date);
+        addTask(title, date);
         taskTitleRef.current.value = '';
         taskDateRef.current.value = '';
     };
@@ -38,3 +38,4 @@ const TaskInput = ( props) => {
 };
 
 export default TaskInput;
+
