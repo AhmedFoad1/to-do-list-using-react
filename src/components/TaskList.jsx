@@ -5,7 +5,7 @@ const TaskList = ({ tasks, removeTask, toggleTaskStatus }) => {
         <ul className="space-y-2">
             {tasks.map((task, index) => (
                 <TaskItem
-                    key={index}
+                    key={task.id}
                     index={index}
                     task={task}
                     removeTask={removeTask}
@@ -17,3 +17,4 @@ const TaskList = ({ tasks, removeTask, toggleTaskStatus }) => {
 };
 
 export default TaskList;
+
